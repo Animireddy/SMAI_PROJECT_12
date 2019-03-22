@@ -105,5 +105,46 @@ X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.10, rando
 # In[ ]:
 
 
+stemmer = PorterStemmer()
+f = open('output.txt', 'w')
+
+def stemmed_words(doc):
+    return (stemmer.stem(w) for w in analyzer(doc))
+
+analyzer = CountVectorizer().build_analyzer()
+print("Creating Word vectors\n")
+vectorizer = CountVectorizer(analyzer=stemmed_words,
+                             tokenizer=None,
+                             lowercase=True,
+                             preprocessor=None,
+                             max_features=5000
+                             )
+
+train_data_features = vectorizer.fit_transform([r for r in X_train])
+# print(train_data_features) dimensions
+test_data_features = vectorizer.transform([r for r in X_test])
+
+train_data_features = train_data_features.toarray()
+test_data_features = test_data_features.toarray()
+# print(train_data_features) zero matrices with corresponding dimensions
+# print(test_data_features)
+# print("Resampling corpus\n")
+# rs = RandomOverSampler()
+# X_resampledRe, y_resampledRe = rs.fit_sample(train_data_features,Y_train)
+
+print("fitting for SVC\n")
+clf = SVC()
+clf.fit(train_data_features, Y_train)
+f.write("\nOutput from SVC Normal:\n")
+predicted = clf.predict(test_data_features)
+f.write(str(predicted))
+f.write("\naccuracy: ")
+f.write(str(np.mean(predicted == Y_test)))
+f.write("\n")
+
+
+# In[ ]:
+
+
 
 
