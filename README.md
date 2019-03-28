@@ -25,6 +25,7 @@ Problem definition (What is the problem? How things will be done?):
 - Problem is Music Genre Classification from Lyrics
 
 - We do it by the following way:
+	SVM model:
 	
 	1. Read train data from input.csv file 
 
@@ -41,6 +42,23 @@ Problem definition (What is the problem? How things will be done?):
 	5. Give this matrix as input to Training model(like SVM) along with corresponding genre output matrix.
 
 	6. Finally done with train model.
+	
+
+	RNN with LSTM model:
+	
+	Steps in LSTM modelling:
+	1. Vectorize lyrics, by turning each text into either a sequence of integers or into a vector.
+	2. Limit the data set to the top 50,000 words.
+	3. Set the max number of words in each text at 250.
+	4. Truncate and pad the input sequences so that they are all in the same length for modeling.
+	5. Converting categorical labels to numbers.
+	6. The first layer is the embedded layer that uses 100 length vectors to represent each word.
+	7. SpatialDropout1D performs variational dropout in NLP models.
+	8. The next layer is the LSTM layer with 100 memory units.
+	9. The output layer must create 8 output values, one for each class.
+	10. Activation function is softmax for multi-class classification.
+	11. Because it is a multi-class classification problem, categorical_crossentropy is used as the loss function.
+
 
 
 Results of the project:
