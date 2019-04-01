@@ -77,7 +77,13 @@ Results of the project:
 
 Team members and tasks for each member:
 
-- Not yet decided.
+- Animi Reddy: Data preprocessing for the SVM model using NLP techniques, Code for training and predicting with the RNN model.
+
+- Sri Keshav Kothapalli: Code for training and predicting with the SVM model, Data collection and analyzing for RNN model, slides.
+
+- Sushman KVS: Code for training and predicting with the SVM model, Data collection and analyzing for SVM model, slides.
+
+- Raghu Chandra: Studied research papers and Discussed with the team, slides.
 
 Project milestones and expected timeline:
 
