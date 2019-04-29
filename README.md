@@ -91,8 +91,8 @@ Task             													      Expected time
 
 1. Collecting train and test data from online sources.		18-03-2019
 
-2. Build a model for the problem 									Done by April 20th
+2. Build a model for the problem. 									Done by April 20th
 
-3. Run on test data 											      	Done by April 22nd
+3. Run on test data. 											      	Done by April 22nd
 
 
